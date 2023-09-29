@@ -1,0 +1,63 @@
+/* LoadingIndicator.css */
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loader {
+  border: 12px solid #3498db; /* Increase border width for a larger circle */
+  border-top: 12px solid #f3f3f3;
+  border-radius: 50%;
+  width: 100px; /* Increase width for a larger circle */
+  height: 100px; /* Increase height for a larger circle */
+  animation: spin 2s linear infinite;
+}
+
+.progress-text {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+/* Button styles */
+.controls button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.controls button:hover {
+  background-color: #2772a0;
+}
+
+.paused .loader {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
